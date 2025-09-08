@@ -1,31 +1,27 @@
-﻿using Grocery.Core.Interfaces.Repositories;
+using Grocery.Core.Interfaces.Repositories;
 using Grocery.Core.Models;
 
 namespace Grocery.Core.Data.Repositories
 {
     public class GroceryListItemsRepository : IGroceryListItemsRepository
     {
-        private readonly List<GroceryListItem> groceryListItems;
+        // Member variabele omgezet naar property
+        private List<GroceryListItem> GroceryListItems { get; }
 
-        public GroceryListItemsRepository()
+        //  Constructor met parameter - doorgegeven waarden koppelen aan properties
+        public GroceryListItemsRepository(List<GroceryListItem> groceryListItems)
         {
-            groceryListItems = [
-                new GroceryListItem(1, 1, 1, 3),
-                new GroceryListItem(2, 1, 2, 1),
-                new GroceryListItem(3, 1, 3, 4),
-                new GroceryListItem(4, 2, 1, 2),
-                new GroceryListItem(5, 2, 2, 5),
-            ];
+            GroceryListItems = groceryListItems; // Doorgegeven waarde gekoppeld aan property
         }
 
         public List<GroceryListItem> GetAll()
         {
-            return groceryListItems;
+            return GroceryListItems;
         }
 
         public List<GroceryListItem> GetAllOnGroceryListId(int id)
         {
-            return groceryListItems.Where(g => g.GroceryListId == id).ToList();
+            return GroceryListItems.Where(g => g.GroceryListId == id).ToList();
         }
 
         public GroceryListItem Add(GroceryListItem item)

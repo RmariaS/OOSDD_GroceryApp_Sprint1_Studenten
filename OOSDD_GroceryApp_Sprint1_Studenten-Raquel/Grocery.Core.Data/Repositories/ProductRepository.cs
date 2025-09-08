@@ -1,7 +1,22 @@
-﻿using Grocery.Core.Interfaces.Repositories;
+using Grocery.Core.Interfaces.Repositories;
 using Grocery.Core.Models;
 
 namespace Grocery.Core.Data.Repositories
+
+    public class Product
+{
+    public int Id { get; set; }
+    public string Naam { get; set; }
+    public int Voorraad { get; set; }
+
+    // Constructor zonder Id — handig voor testdata, maar Id blijft 0!
+    public Product(string naam, int voorraad)
+    {
+        Naam = naam;
+        Voorraad = voorraad;
+        // Id blijft 0 — dat is een probleem als je meerdere producten hebt!
+    }
+
 {
     public class ProductRepository : IProductRepository
     {
@@ -9,18 +24,15 @@ namespace Grocery.Core.Data.Repositories
         public ProductRepository()
         {
             products = [
-                /* 
-                 * initieer de lijst met 4 nieuwe producten: 
-                 * Melk[voorraad 300], 
-                 * Kaas[voorraad 100], 
-                 * Brood[voorraad 400] en 
-                 * Cornflakes[voorraad 0]
-                */
+                new Product("Melk", 300),
+                new Product("Kaas", 100),
+                new Product("Brood", 400),
+                new Product("Cornflakes", 0)
 				];
         }
         public List<Product> GetAll()
         {
-            return []; //wijzig dit in de gemaakte lijst uit de constructo
+            return products; //wijzig dit in de gemaakte lijst uit de constructo
         }
 
         public Product? Get(int id)
