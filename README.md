@@ -6,7 +6,8 @@ In deze versie zijn de wijzigingen doorgevoerd en is de code compleet.
 Is compleet.
 
 **UC02 Tonen inhoud boodschappenlijst**   
-In het bestand `GroceryListItem.cs` uit het project Grocery.Core.Models:
+In het bestand GroceryListItem.cs uit het project Grocery.Core.Models:
+
 - De member variabelen wijzigen in properties
 - In de constructor de doorgegeven waarden koppelen aan de properties.
 
@@ -18,3 +19,8 @@ In het bestand `ProductRepository.cs` uit het project Grocery.Core.Data:
   - Brood[voorraad 400]
   - Cornflakes[voorraad 0]
 - In de methode GetAll() zorg je dat de lijst met producten wordt meegegeven.
+
+
+In deze versie zijn de wijzigingen doorgevoerd en is de code compleet.
+
+
