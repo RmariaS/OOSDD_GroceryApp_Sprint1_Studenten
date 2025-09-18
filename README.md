@@ -6,7 +6,7 @@ In deze versie zijn de wijzigingen doorgevoerd en is de code compleet.
 Is compleet.
 
 **UC02 Tonen inhoud boodschappenlijst**   
-In het bestand GroceryListItem.cs uit het project Grocery.Core.Models:
+In het bestand GroceryListItem.cs uit het project Grocery.Core.Models:kmokom
 
 - De member variabelen wijzigen in properties
 - In de constructor de doorgegeven waarden koppelen aan de properties.
